@@ -1,38 +1,45 @@
 = Evolution Rules: Code
-:revdate: 2026-03-22
-:toc: left
+:toc:
+:icons: font
 
-Standard SDL rulesets for code migrations (e.g., PyQt5 to PyQt6, API shifts, etc.). This repository is the official code-level rules hub for the link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] ecosystem.
+Evolutionary rules for source code migrations between library and framework versions, designed for the link:https://github.com/AMDphreak/evolution-engine[Evolution Engine].
 
-This repository is a **Content Repository**. It contains the logic (rules) but requires the link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] binary or the link:https://github.com/AMDphreak/evolution-engine-action[Evolution Engine Action] to execute them.
+== Ecosystem
 
-== What is here
+* link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] — The core binary that resolves and applies these rules.
+* link:https://github.com/AMDphreak/evolution-engine-action[Evolution Engine Action] — Modular GitHub Action to automate code evolution in CI pipelines.
+* link:https://github.com/AMDphreak/evolution-rules-code[Evolution Rules: Code] — This repository (PyQt, library-level migrations).
+* link:https://github.com/AMDphreak/evolution-rules-filesystem[Evolution Rules: Filesystem] — Rules for cross-OS path mapping and equivalency.
 
-* `rules/<language>/<library>/` — Versioned SDL rulesets organized by language and library/binding.
+== Overview
 
-== Use with Evolution Engine (recommended)
+This repository contains SDL-based rulesets for evolving source code. Rules are organized by language and library binding to ensure precise and safe migrations.
 
-The engine can use these rules from a local clone or pull them from Git:
+Currently featuring comprehensive rules for **PyQt5 to PyQt6** migrations.
+
+== Directory Structure
+
+[source]
+----
+rules/
+└── python/             <-- Language
+    └── PyQt/           <-- Library/Binding
+        ├── 5.15-6.0.sdl  <-- Version Migration Rule
+        └── default/
+----
+
+== Usage with Evolution Engine
+
+To migrate a Python project from PyQt5 to PyQt6:
 
 [source,bash]
 ----
-evolution-engine --path ./src --rules-repo https://github.com/AMDphreak/evolution-rules-code --library python/PyQt --from 5.15 --to 6.0
+evolution-engine -p . \
+  --rules-repo https://github.com/AMDphreak/evolution-rules-code \
+  --library python/PyQt \
+  --from 5.15 --to 6.0 --in-place
 ----
 
-With a local checkout, point at the rules directory:
+== Contribution
 
-[source,bash]
-----
-evolution-engine --path ./src --rules-dir ./rules/python/PyQt --from 5.15 --to 6.0
-----
-
-See the link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] repository for full options (remote rules, shortest path between versions, dry run, and more).
-
-== Related
-
-* link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] — version-aware migration engine that can consume this repository.
-* link:https://github.com/AMDphreak/evolution-engine-action[Evolution Engine Action] — generic GitHub Action for running these rules in CI.
-
-== Changelog
-
-See link:CHANGELOG.adoc[CHANGELOG.adoc] for a timeline of changes and detailed release notes.
+New rules should be added to the appropriate `rules/<lang>/<library>/` subdirectory. Each rule file should be named according to the version jump (e.g., `1.0-2.0.sdl`).
