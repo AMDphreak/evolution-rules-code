@@ -1,0 +1,38 @@
+= Evolution Rules: Qt
+:revdate: 2026-03-22
+:toc: left
+
+SDL rulesets for migrating Qt and PyQt source between versions (for example 5.15 to 6.0). This repository is the official Qt rules pack for the link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] ecosystem.
+
+This repository is a **Content Repository**. It contains the logic (rules) but requires the link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] binary or the link:https://github.com/AMDphreak/evolution-engine-action[Evolution Engine Action] to execute them.
+
+== What is here
+
+* `rules/qt/` — Versioned SDL rulesets. Filenames encode edges between versions (for example `5.12-5.15.sdl`, `5.15-6.0.sdl`).
+
+== Use with Evolution Engine (recommended)
+
+The engine can use these rules from a local clone or pull them from Git:
+
+[source,bash]
+----
+evolution-engine --path ./src --rules-repo https://github.com/AMDphreak/evolution-rules-qt --from 5.15 --to 6.0
+----
+
+With a local checkout, point at the rules directory:
+
+[source,bash]
+----
+evolution-engine --path ./src --rules-dir ./rules/qt --from 5.15 --to 6.0
+----
+
+See the link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] repository for full options (remote rules, shortest path between versions, dry run, and more).
+
+== Related
+
+* link:https://github.com/AMDphreak/evolution-engine[Evolution Engine] — version-aware migration engine that can consume this repository.
+* link:https://github.com/AMDphreak/evolution-engine-action[Evolution Engine Action] — generic GitHub Action for running these rules in CI.
+
+== Changelog
+
+See link:CHANGELOG.adoc[CHANGELOG.adoc] for a timeline of changes and detailed release notes.

@@ -1,0 +1,16 @@
+# Exclude new files by default
+*
+
+# Include core files and folders
+!rules/**
+!.github/
+!README.adoc
+!README.md
+!.gitignore
+!CHANGELOG.adoc
+!changelog-details/**
+
+# Standard excludes
+# Build artifacts
+**/*.exe
+.dub/
