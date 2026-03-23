@@ -2,6 +2,7 @@
 *
 
 # Include core files and folders
+!rules/
 !rules/**
 !.github/
 !README.adoc

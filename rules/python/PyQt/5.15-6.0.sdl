@@ -1,0 +1,39 @@
+ruleset "5.15 to 6.0" {
+    // 1. Module Renames (Core to Widgets/Gui split)
+    replace "QtWidgets.QAction" "QtGui.QAction"
+    replace "QtWidgets.QShortcut" "QtGui.QShortcut"
+    replace "QtWidgets.QUndoCommand" "QtGui.QUndoCommand"
+
+    // 2. High DPI and Attributes
+    replace "Qt.AA_EnableHighDpiScaling" "None // Automatic in Qt6"
+    replace "Qt.AA_UseHighDpiPixmaps" "None // Automatic in Qt6"
+
+    // 3. Enum Scoping (Crucial in PyQt6)
+    replace "Qt.AlignCenter" "Qt.AlignmentFlag.AlignCenter"
+    replace "Qt.AlignLeft" "Qt.AlignmentFlag.AlignLeft"
+    replace "Qt.AlignRight" "Qt.AlignmentFlag.AlignRight"
+    replace "Qt.AlignTop" "Qt.AlignmentFlag.AlignTop"
+    replace "Qt.AlignBottom" "Qt.AlignmentFlag.AlignBottom"
+    replace "Qt.Checked" "Qt.CheckState.Checked"
+    replace "Qt.Unchecked" "Qt.CheckState.Unchecked"
+    replace "Qt.PartiallyChecked" "Qt.CheckState.PartiallyChecked"
+    replace "Qt.Horizontal" "Qt.Orientation.Horizontal"
+    replace "Qt.Vertical" "Qt.Orientation.Vertical"
+    replace "Qt.CaseSensitive" "Qt.CaseSensitivity.CaseSensitive"
+    replace "Qt.CaseInsensitive" "Qt.CaseSensitivity.CaseInsensitive"
+    replace "Qt.ArrowCursor" "Qt.CursorShape.ArrowCursor"
+    replace "Qt.WaitCursor" "Qt.CursorShape.WaitCursor"
+    replace "Qt.PointingHandCursor" "Qt.CursorShape.PointingHandCursor"
+
+    // 4. Function Renames
+    replace ".exec_()" ".exec()"
+    replace ".byteCount()" ".sizeInBytes()"
+
+    // 5. Event methods
+    regex "\\.pos\\(\\)" ".position()"
+    regex "\\.globalPos\\(\\)" ".globalPosition()"
+
+    // 6. Miscellaneous
+    replace "qApp" "QApplication.instance()"
+    replace "QNetworkRequest.FollowRedirectsAttribute" "QNetworkRequest.Attribute.RedirectPolicyAttribute"
+}
