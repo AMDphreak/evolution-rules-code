@@ -5,11 +5,14 @@
 !rules/
 !rules/**
 !.github/
+!.github/workflows/
+!.github/workflows/*
 !README.adoc
 !README.md
 !.gitignore
 !CHANGELOG.adoc
 !changelog-details/**
+!CI_COMPATIBILITY.md
 
 # Standard excludes
 # Build artifacts
