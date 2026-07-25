@@ -1,0 +1,10 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "Astro 0.25 to 0.26" {
+    aliases "0.25.1" "0.25.2"
+    
+    // Markdown API migration
+    replace "Astro.fetchContent(" "Astro.glob("
+    
+    warn "renderers:" "Astro 0.26 introduced the integrations API. 'renderers' is deprecated in configuration."
+}
+

@@ -1,0 +1,6 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "6.0 to 6.x" {
+    aliases "6.0" "6.1" "6.2"
+    note "PyQt6" "PyQt6 is the stable major version. Focus on fully-qualified enums and SIP 6 builds."
+}
+

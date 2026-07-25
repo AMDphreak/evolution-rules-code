@@ -1,0 +1,11 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "Astro 2.0 to 3.0" {
+    aliases "2.1" "2.2" "2.3" "2.4" "2.5"
+    
+    replace "from '@astrojs/image'" "from 'astro:assets'"
+    
+    warn "<Markdown" "The <Markdown /> component was removed. Use @astrojs/mdx or a custom markdown component."
+    
+    warn "image()" "Schema-based image() helper in z.defineCollection is removed. Use z.image() from astro:content."
+}
+

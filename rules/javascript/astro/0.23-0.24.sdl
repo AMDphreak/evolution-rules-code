@@ -1,0 +1,8 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "Astro 0.23 to 0.24" {
+    aliases "0.23.1" "0.23.2"
+    
+    // Astro.resolve() deprecation
+    warn "Astro.resolve(" "Astro.resolve() is deprecated in v0.24. Use standard ESM imports instead."
+}
+

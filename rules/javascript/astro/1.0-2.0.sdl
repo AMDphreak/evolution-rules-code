@@ -1,0 +1,11 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "Astro 1.0 to 2.0" {
+    aliases "1.1" "1.2" "1.3" "1.4" "1.5"
+    
+    warn "Astro.resolve(" "Astro.resolve() is removed in v2.0. Use standard ESM imports."
+    warn "Astro.fetchContent(" "Astro.fetchContent() is removed in v2.0. Use Astro.glob()."
+    warn "Astro.canonicalURL" "Astro.canonicalURL is removed. Use new URL(Astro.url.pathname, Astro.site)."
+    
+    note "src/content" "The src/content directory is now reserved for the Content Collections API."
+}
+

@@ -1,0 +1,7 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "Astro 0.21 to 0.22" {
+    aliases "0.21.1" "0.21.2"
+    // Bugfixes for 0.21 rewrite; no major new APIs.
+    note "Vite" "Astro v0.22 stabilized the Vite 2 integration. Ensure Vite plugins are up to date."
+}
+

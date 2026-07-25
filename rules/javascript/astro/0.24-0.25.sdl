@@ -1,0 +1,8 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "Astro 0.24 to 0.25" {
+    aliases "0.24.1" "0.24.2"
+    
+    // Integrations API
+    note "@astrojs/" "Astro v0.25 introduced the official Integrations API. Migrate experimental renderers to @astrojs/ packages."
+}
+

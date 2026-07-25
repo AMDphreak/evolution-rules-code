@@ -1,0 +1,8 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "PyQt 6.1 to 6.2" {
+    aliases "6.1.1"
+    
+    // PyQt 6.2 restored many modules from PyQt5
+    note "Qt6" "PyQt 6.2 restored support for missing modules like QtMqtt, QtPdf, etc."
+}
+

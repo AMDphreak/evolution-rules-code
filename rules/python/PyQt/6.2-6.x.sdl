@@ -1,0 +1,7 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "PyQt 6.2 to 6.x" {
+    aliases "6.3" "6.4" "6.5" "6.6" "6.7" "6.8" 
+    
+    note "Qt6" "PyQt 6.x is stable. Ensure usage of fully-qualified enums (e.g. Qt.AlignmentFlag.AlignCenter)."
+}
+

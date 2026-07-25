@@ -1,0 +1,10 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "Astro 0.22 to 0.23" {
+    aliases "0.22.1" "0.22.2"
+    
+    // HTML handling changes
+    warn "<%" "Astro v0.23 deprecated older unescaped HTML patterns. Use raw HTML fragments instead."
+    
+    warn "components:" "Astro v0.23 finalize the move from frontmatter components: to ESM imports."
+}
+

@@ -1,0 +1,7 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "Astro 0.26 to 1.0" {
+    aliases "0.26.1" "0.26.2" "0.28" // Aliases for the long beta/RC period
+    
+    note "v1.0" "Astro v1.0 is stable! Ensure your site configuration uses .site and .base instead of legacy buildOptions."
+}
+

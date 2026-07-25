@@ -1,0 +1,10 @@
+repo "https://github.com/amdphreak/equivalence-rules-code"
+ruleset "PyQt 5.11 to 5.12" {
+    aliases "5.11.1" "5.11.2"
+    
+    // Critical change: WebEngine and others moved to separate packages
+    warn "QtWebEngine" "PyQt 5.12 moved WebEngine to a standalone 'PyQtWebEngine' package. Run 'pip install PyQtWebEngine'."
+    warn "QtChart" "PyQt 5.12 moved Charts to a standalone 'PyQtChart' package. Run 'pip install PyQtChart'."
+    warn "QtDataVisualization" "PyQt 5.12 moved DataVisualization to a standalone 'PyQtDataVisualization' package. Run 'pip install PyQtDataVisualization'."
+}
+
