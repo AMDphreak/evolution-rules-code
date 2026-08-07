@@ -3,19 +3,11 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-ifndef::env-github[]
+[[readme-top]]
 image:https://img.shields.io/github/contributors/dev-centr/equivalence-rules-code.svg?style=for-the-badge[Contributors,link=https://github.com/dev-centr/equivalence-rules-code/graphs/contributors]
 image:https://img.shields.io/github/forks/dev-centr/equivalence-rules-code.svg?style=for-the-badge[Forks,link=https://github.com/dev-centr/equivalence-rules-code/network/members]
 image:https://img.shields.io/github/stars/dev-centr/equivalence-rules-code.svg?style=for-the-badge[Stars,link=https://github.com/dev-centr/equivalence-rules-code/stargazers]
 image:https://img.shields.io/github/issues/dev-centr/equivalence-rules-code.svg?style=for-the-badge[Issues,link=https://github.com/dev-centr/equivalence-rules-code/issues]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/dev-centr/equivalence-rules-code.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/dev-centr/equivalence-rules-code.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/dev-centr/equivalence-rules-code.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/dev-centr/equivalence-rules-code.svg?style=for-the-badge[Issues]
-endif::[]
 
 = Equivalence Rules: Code
 
@@ -50,6 +42,8 @@ rules/
         └── 5.15-6.0.sdl  <-- Version Migration Rule
 ----
 
+link:#readme-top[back to top]
+
 == Usage
 
 To migrate a Python project from PyQt5 to PyQt6:
@@ -62,9 +56,13 @@ equivalence-engine -p . \
   --from 5.15 --to 6.0 --in-place
 ----
 
+link:#readme-top[back to top]
+
 == Contributing
 
 New rules should be added to the appropriate `rules/<lang>/<library>/` subdirectory. Each rule file should be named according to the version jump (e.g., `1.0-2.0.sdl`).
+
+link:#readme-top[back to top]
 
 == Contact
 
@@ -72,3 +70,5 @@ DevCentr.org — support@devcentr.org
 
 * Project: https://github.com/dev-centr/equivalence-rules-code
 * Site: https://devcentr.org
+
+link:#readme-top[back to top]
